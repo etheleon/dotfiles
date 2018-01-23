@@ -57,9 +57,10 @@ ENV MANPATH="$(brew --prefix)/share/man:$MANPATH" \
     INFOPATH="$(brew --prefix)/share/info:$INFOPATH"
 
 # install and configure keras
-RUN sudo /opt/conda/bin/pip install keras==1.2.2
+
+RUN sudo /opt/conda/bin/pip install keras==2.1.3
 RUN mkdir ~/.keras
-RUN echo '{ "image_dim_ordering": "th", "epsilon": 1e-07, "floatx": "float32", "backend": "theano" }' > ~/.keras/keras.json
+RUN echo '{ "image_dim_ordering": "th", "epsilon": 1e-07, "floatx": "float32", "backend": "tensorflow" }' > ~/.keras/keras.json
 
 # configure jupyter and prompt for password
 RUN jupyter notebook --generate-config
