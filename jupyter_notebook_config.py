@@ -783,7 +783,7 @@ c.HybridContentsManager.manager_classes = {
     # other managers.
     "": S3ContentsManager,
     # Associate /directory with a FileContentsManager.
-    "serverbee": FileContentsManager,
+    "beedrive": FileContentsManager,
 }
 
 # For Jupyter's filesystem to find both local and S3 folders,
