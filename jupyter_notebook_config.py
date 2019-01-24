@@ -795,7 +795,7 @@ c.HybridContentsManager.manager_kwargs = {
         "access_key_id": os.environ.get("AWS_ACCESS_KEY_ID"),
         "secret_access_key": os.environ.get("AWS_SECRET_ACCESS_KEY"),
         "bucket": os.environ.get("S3_BUCKET"),
-        "prefix": os.environ.get("S3_KEY") # s3://<bucket_name>/jupyter
+        "prefix": os.environ.get("S3_KEY")  # s3://<bucket_name>/jupyter
     },
     # Args for the FileContentsManager mapped to /directory
     # This will be your local folder
