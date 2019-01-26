@@ -31,5 +31,5 @@ ftags() {
 }
 
 PS1=$PS1
-PS1='↱$(kube_ps1) '$PS1'
-↳ '
+PS1='╭─$(kube_ps1) '$PS1'
+╰─ '
