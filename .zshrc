@@ -29,3 +29,6 @@ ftags() {
   ) && ${EDITOR:-vim} $(cut -f3 <<< "$line") -c "set nocst" \
                                       -c "silent tag $(cut -f2 <<< "$line")"
 }
+
+PS1=$PS1
+PS1='↱$(kube_ps1) '$PS1'
