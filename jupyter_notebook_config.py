@@ -800,6 +800,6 @@ c.HybridContentsManager.manager_kwargs = {
     # Args for the FileContentsManager mapped to /directory
     # This will be your local folder
     "beedrive": {
-        "root_dir": "/home/uesu/work",
+        "root_dir": "/home/jovyan/work",
     },
 }
