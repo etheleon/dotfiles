@@ -30,7 +30,7 @@ ftags() {
                                       -c "silent tag $(cut -f2 <<< "$line")"
 }
 
-source "$HOME/.linuxbrew/opt/kube-ps1/share/kube-ps1.sh"
+source "$HOME/local/kube-ps1/share/kube-ps1.sh"
 PS1=$PS1
 PS1='╭─$(kube_ps1) '$PS1'
 ╰─ '
