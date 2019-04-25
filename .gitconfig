@@ -1,0 +1,29 @@
+[user]
+    name            = name
+    email           = email
+[color]
+    ui              = auto
+    editor          = vi
+[push]
+    default         = simple
+[branch]
+    autosetuprebase = always
+[rerere]
+    enabled         = true
+[alias]
+    s               = status -s
+    lg              = log --oneline --decorate --all --graph
+[github]
+    user              = etheleon
+[core]
+    autocrlf        = input
+    editor          = vim
+[merge]
+    tool            = vimdiff
+    conflictstyle   = diff3
+[mergetool]
+    prompt          = false
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
