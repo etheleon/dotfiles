@@ -1,5 +1,3 @@
-plugins=(git, kubectl)
-
 if [ -d $HOME/local ]; then
     for i in $HOME/local/* ; do
         [ -d $i/bin ] && PATH="${i}/bin:${PATH}"
