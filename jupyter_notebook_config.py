@@ -771,6 +771,7 @@ c.NotebookApp.open_browser = False
 from s3contents import S3ContentsManager
 from pgcontents.hybridmanager import HybridContentsManager
 from IPython.html.services.contents.filemanager import FileContentsManager
+from jgscm import GoogleStorageContentManager
 import os
 
 c = get_config()
@@ -781,25 +782,32 @@ c.HybridContentsManager.manager_classes = {
     # Associate the root directory with a PostgresContentsManager.
     # This manager will receive all requests that don"t fall under any of the
     # other managers.
-    "": S3ContentsManager,
+    # "": S3ContentsManager,
+    "": GoogleStorageContentManager,
     # Associate /directory with a FileContentsManager.
-    "beedrive": FileContentsManager,
+    "harddrive": FileContentsManager,
 }
 
 # For Jupyter's filesystem to find both local and S3 folders,
 # we will add two entries in c.HybridContentsManager.manager_kwargs
 c.HybridContentsManager.manager_kwargs = {
     # Args for root PostgresContentsManager.
+
     # This will be the S3 folder
-    "": {
-        "access_key_id": os.environ.get("AWS_ACCESS_KEY_ID"),
-        "secret_access_key": os.environ.get("AWS_SECRET_ACCESS_KEY"),
-        "bucket": os.environ.get("S3_BUCKET"),
-        "prefix": os.environ.get("S3_KEY")  # s3://<bucket_name>/jupyter
-    },
+    # "": {
+    #     "access_key_id": os.environ.get("AWS_ACCESS_KEY_ID"),
+    #     "secret_access_key": os.environ.get("AWS_SECRET_ACCESS_KEY"),
+    #     "bucket": os.environ.get("S3_BUCKET"),
+    #     "prefix": os.environ.get("S3_KEY")  # s3://<bucket_name>/jupyter
+    # },
+    "" : {
+        "project" : os.environ.get("PROJECT_ID")
+        "keyfile" : os.environ.get("SERVICEACCOUNTJSON")
+        "default_path" : os.environ.get("path2notebook")
+    }
     # Args for the FileContentsManager mapped to /directory
     # This will be your local folder
-    "beedrive": {
+    "harddrive": {
         "root_dir": "/home/jovyan/work",
     },
 }
