@@ -800,11 +800,11 @@ c.HybridContentsManager.manager_kwargs = {
     #     "bucket": os.environ.get("S3_BUCKET"),
     #     "prefix": os.environ.get("S3_KEY")  # s3://<bucket_name>/jupyter
     # },
-    "" : {
-        "project" : os.environ.get("PROJECT_ID")
-        "keyfile" : os.environ.get("SERVICEACCOUNTJSON")
-        "default_path" : os.environ.get("path2notebook")
-    }
+    "": {
+        "project": os.environ.get("PROJECT_ID"),
+        "keyfile": os.environ.get("GOOGLE_APPLICATION_CREDENTIALS"),
+        "default_path": os.environ.get("PREFIX")
+    },
     # Args for the FileContentsManager mapped to /directory
     # This will be your local folder
     "harddrive": {
