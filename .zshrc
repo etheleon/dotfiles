@@ -1,3 +1,8 @@
+# history search
+bindkey '^R' history-incremental-search-backward
+# vim input mode
+bindkey -v
+
 if [ -d $HOME/local ]; then
     for i in $HOME/local/* ; do
         [ -d $i/bin ] && PATH="${i}/bin:${PATH}"
